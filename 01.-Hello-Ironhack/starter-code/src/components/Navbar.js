@@ -7,8 +7,12 @@ class Navbar extends Component {
   render() {  
     return (
       <nav className="nav-bar">
-        <img src={process.env.PUBLIC_URL + "images/ironhack-logo.svg"} alt="ih-logo"/>
-        <img src={process.env.PUBLIC_URL + "images/menu-top.svg"} alt="burger"/>
+        <div id="logo-container">
+          <img src={process.env.PUBLIC_URL + "images/ironhack-logo.svg"} alt="ih-logo"/>
+        </div>
+        <div id="menu-container">
+          <img src={process.env.PUBLIC_URL + "images/menu-top.svg"} alt="burger"/>
+        </div>
       </nav>
     )
   }
