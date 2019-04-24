@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 // Project dependencies
 /// Variables
-import features from '../helpers/variables.js';
+import features from '../helpers/variables';
 /// Components
 import Feature from './Feature';
 
