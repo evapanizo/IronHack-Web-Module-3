@@ -1,5 +1,4 @@
 /* ---- Reset ---- */
-
 html {
   box-sizing: border-box;
 }
@@ -9,6 +8,16 @@ html {
 
 body {
   margin: 0;
-  padding: 60px;
   font-family: sans-serif;
+}
+
+/* ---- Navbar ---- */
+nav {
+  padding-bottom: 30px;
+}
+
+/* ---- Form Field ---- */
+.field {
+  width: 400px;
+  padding-left: 50px;
 }
