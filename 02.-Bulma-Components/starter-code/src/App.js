@@ -3,17 +3,19 @@ import React, { Component } from 'react';
 
 // Project dependencies
 /// Components
-import Navbar from './components/Navbar';
-import FormField from './components/FormField';
+import Signup from './components/Signup';
+import Message from './components/Message';
 
 // App
 class App extends Component {
   render() {
+    const title = "Reminder";
     return (
       <main>
-        <Navbar/>
-        <FormField label="Name" type="text" placeholder="e.g Alex Smith" />
-        <FormField label="Email" type="email" placeholder="e.g. alexsmith@gmail.com" />
+        <Signup/>
+        <Message isInfo className="message-container" title={title}>
+          If you already have an account, login!
+        </Message>
       </main>
     )
   }

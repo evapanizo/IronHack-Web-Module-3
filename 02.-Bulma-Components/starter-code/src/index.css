@@ -11,13 +11,20 @@ body {
   font-family: sans-serif;
 }
 
-/* ---- Navbar ---- */
-nav {
-  padding-bottom: 30px;
+/* ---- Form ---- */
+.form-container {
+  padding-top: 35px;
+  padding-left: 50px;
 }
 
 /* ---- Form Field ---- */
 .field {
   width: 400px;
-  padding-left: 50px;
+}
+
+/* ---- Message ---- */
+.message-container {
+  width: 350px;
+  margin-left: 50px;
+  margin-top: 60px;
 }

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 // Project dependencies
 /// Helpers
-import types from '../helpers/button-types';
+import types from '../helpers/component-types';
 
 // Cool Button
 class CoolButton extends Component {
