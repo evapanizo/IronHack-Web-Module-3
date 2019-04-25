@@ -1,21 +1,29 @@
+// Module dependencies
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import listOfContacts from './data/contacts.json';
 
+// Project dependencies
+/// Components
+import Table from './components/Table';
+
+// App
 class App extends Component {
+
+  state = {
+    contacts: listOfContacts.slice(0,5)
+  }
+
   render() {
+    const {contacts} = this.state;
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+      <main>
+        <h1>IronContacts</h1>
+        <button className='btn'>Add Random Contact</button>
+        <Table contacts={contacts}/>
+      </main>
+    )
   }
 }
 
+// Export
 export default App;

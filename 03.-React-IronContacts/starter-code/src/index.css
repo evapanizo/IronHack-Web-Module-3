@@ -1,5 +1,47 @@
+/* ---- Reset ---- */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
   margin: 0;
-  padding: 0;
   font-family: sans-serif;
+  padding: 20px 0px 0px 100px;
+}
+
+/* ---- App ---- */
+
+button {
+  padding: 0px;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+.btn {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  margin: 30px 0px;
+  padding: 30px;
+  border: solid 1px transparent;
+  border-radius: 4px;
+  padding: 0.5em 1em;
+  background-color: #CEC7D1BE;
+}
+
+/* ---- Contact ---- */
+
+.contact-img {
+  width: 100px;
+}
+
+/* ---- Table ---- */
+
+td {
+  text-align: center;
 }
