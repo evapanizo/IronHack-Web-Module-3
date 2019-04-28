@@ -60,3 +60,10 @@ input, label {
 #add-submit {
   margin: 10px 0px;
 }
+
+/* ---- Search ---- */
+
+.search-input{
+  width: 500px;
+  margin-bottom: 15px;
+}
