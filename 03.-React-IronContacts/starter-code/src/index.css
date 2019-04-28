@@ -9,10 +9,10 @@ html {
 body {
   margin: 0;
   font-family: sans-serif;
-  padding: 20px 0px 0px 100px;
+  padding: 20px 100px 0px 100px;
 }
 
-/* ---- App ---- */
+/* ---- Buttons ---- */
 
 button {
   padding: 0px;
@@ -35,6 +35,17 @@ button {
   color: whitesmoke;
 }
 
+.btn-delete {
+  margin: 0;
+}
+
+.btn-menu {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 60px;
+}
+
 /* ---- Contact ---- */
 
 .contact-img {
@@ -43,6 +54,11 @@ button {
 
 /* ---- Table ---- */
 
+table {
+  width: 100%;
+}
+
 td {
   text-align: center;
+  width: 200px;
 }

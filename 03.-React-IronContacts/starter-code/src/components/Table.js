@@ -10,16 +10,16 @@ import TableColumns from './TableColumns';
 class Table extends Component {
 
   render() { 
-    const {contacts, columns} = this.props
+    const {contacts, columns, handleDelete} = this.props
     return (
       <table>
         <TableColumns columns={columns}/>
         <tbody>
           {contacts.map( (contact, index) => 
             <Contact key={index}
-                      name={contact.name}
-                      picture={contact.pictureUrl}
-                      popularity={Math.round(contact.popularity * 100) / 100}/>
+                     index={index}
+                     contact={contact}
+                     handleDelete={handleDelete}/>
           )}
         </tbody>
       </table>

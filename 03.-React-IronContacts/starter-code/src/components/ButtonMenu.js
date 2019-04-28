@@ -5,15 +5,18 @@ import React, { Component } from 'react';
 class ButtonMenu extends Component {
 
   handleAddRandom = () => {
-    const {contacts, contactsList, handleState} = this.props;
-    const index = Math.floor(Math.random() * contactsList.length)
-    contacts.push(contactsList[index])
-    contactsList.splice(index,1);
-    handleState({contacts: contacts, contactsList: contactsList})
+    const {contactsList} = this.props;
+    if(contactsList.length > 0) {
+      const {contacts, handleState} = this.props;
+      const index = Math.floor(Math.random() * contactsList.length)
+      contacts.push(contactsList[index])
+      contactsList.splice(index,1);
+      handleState({contacts: contacts, contactsList: contactsList})
+    }
   }
 
-  handleSort = (e) => {
-    const type = e.target.textContent === 'Sort By Name' ? 'name' : 'popularity'
+  handleSort = (event) => {
+    const type = event.target.textContent === 'Sort By Name' ? 'name' : 'popularity'
     const {contacts, handleState, contactsList} = this.props;
     const sorted = contacts.sort( (a, b) => {
       if (a[type] < b[type]) {

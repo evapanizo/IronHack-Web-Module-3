@@ -23,15 +23,30 @@ class App extends Component {
     });
   }
 
-  render() {
-    const columns = ['Picture', 'Name', 'Popularity']
+  handleDelete = index => {
     const {contacts, contactsList} = this.state;
-    const {handleState} = this;
+    contactsList.push(contacts[index])
+    contacts.splice(index,1);
+    this.setState({
+      contacts: contacts,
+      contactsList: contactsList
+    });
+  }
+
+  render() {
+    const columns = ['Picture', 'Name', 'Popularity', 'Action']
+    const {contacts, contactsList} = this.state;
+    const {handleState, handleDelete} = this;
     return (
       <main>
         <h1>IronContacts</h1>
-        <ButtonMenu contacts={contacts} contactsList={contactsList} handleState={handleState}/>
-        <Table contacts={contacts} columns={columns}/>
+        <ButtonMenu contacts={contacts} 
+                    contactsList={contactsList} 
+                    handleState={handleState}/>
+        <Table contacts={contacts} 
+               contactsList={contactsList} 
+               columns={columns} 
+               handleDelete={handleDelete}/>
       </main>
     )
   }
