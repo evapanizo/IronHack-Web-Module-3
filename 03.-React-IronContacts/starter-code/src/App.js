@@ -10,15 +10,28 @@ import Table from './components/Table';
 class App extends Component {
 
   state = {
-    contacts: listOfContacts.slice(0,5)
+    contacts: listOfContacts.slice(0,5),
+    contactsList: listOfContacts.slice(5)
+  }
+
+  handleAddRandomClick = () => {
+    const {contacts, contactsList} = this.state;
+    const index = Math.floor(Math.random() * contactsList.length)
+    contacts.push(contactsList[index])
+    contactsList.splice(index,1);
+    this.setState({
+      contacts: contacts,
+      contactsList: contactsList
+    });
   }
 
   render() {
     const {contacts} = this.state;
+    const {handleAddRandomClick} = this;
     return (
       <main>
         <h1>IronContacts</h1>
-        <button className='btn'>Add Random Contact</button>
+        <button className='btn' onClick={handleAddRandomClick}>Add Random Contact</button>
         <Table contacts={contacts}/>
       </main>
     )
