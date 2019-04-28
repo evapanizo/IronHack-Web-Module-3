@@ -26,12 +26,13 @@ button {
   display: inline-block;
   text-align: center;
   text-decoration: none;
-  margin: 30px 0px;
+  margin: 30px 15px 30px 0px;
   padding: 30px;
   border: solid 1px transparent;
   border-radius: 4px;
   padding: 0.5em 1em;
-  background-color: #CEC7D1BE;
+  background-color: #217DB8;
+  color: whitesmoke;
 }
 
 /* ---- Contact ---- */

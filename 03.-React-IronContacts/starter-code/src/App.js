@@ -5,6 +5,7 @@ import listOfContacts from './data/contacts.json';
 // Project dependencies
 /// Components
 import Table from './components/Table';
+import ButtonMenu from './components/ButtonMenu';
 
 // App
 class App extends Component {
@@ -14,11 +15,8 @@ class App extends Component {
     contactsList: listOfContacts.slice(5)
   }
 
-  handleAddRandomClick = () => {
-    const {contacts, contactsList} = this.state;
-    const index = Math.floor(Math.random() * contactsList.length)
-    contacts.push(contactsList[index])
-    contactsList.splice(index,1);
+  handleState = newState => {
+    const {contacts, contactsList} = newState;
     this.setState({
       contacts: contacts,
       contactsList: contactsList
@@ -26,13 +24,14 @@ class App extends Component {
   }
 
   render() {
-    const {contacts} = this.state;
-    const {handleAddRandomClick} = this;
+    const columns = ['Picture', 'Name', 'Popularity']
+    const {contacts, contactsList} = this.state;
+    const {handleState} = this;
     return (
       <main>
         <h1>IronContacts</h1>
-        <button className='btn' onClick={handleAddRandomClick}>Add Random Contact</button>
-        <Table contacts={contacts}/>
+        <ButtonMenu contacts={contacts} contactsList={contactsList} handleState={handleState}/>
+        <Table contacts={contacts} columns={columns}/>
       </main>
     )
   }

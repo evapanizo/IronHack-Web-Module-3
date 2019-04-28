@@ -5,13 +5,11 @@ import React, { Component } from 'react';
 class TableColumns extends Component {
 
   render() { 
-    const {first, second, third} = this.props;
+    const {columns} = this.props;
     return (
       <thead>
-        <tr>
-          <th>{first}</th>
-          <th>{second}</th> 
-          <th>{third}</th>
+        <tr> 
+          {columns.map((column, index) => <th key={index}>{column}</th>)}
         </tr>
       </thead>
     )

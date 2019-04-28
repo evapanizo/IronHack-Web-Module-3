@@ -10,11 +10,10 @@ import TableColumns from './TableColumns';
 class Table extends Component {
 
   render() { 
-    const {contacts} = this.props
-    const columns = ['Picture', 'Name', 'Popularity']
+    const {contacts, columns} = this.props
     return (
       <table>
-        <TableColumns first={columns[0]} second={columns[1]} third={columns[2]}/>
+        <TableColumns columns={columns}/>
         <tbody>
           {contacts.map( (contact, index) => 
             <Contact key={index}
