@@ -3,9 +3,22 @@ import React, { Component } from 'react';
 
 // FoodBox
 class FoodBox extends Component {
+  
+  state = {
+    value: 1
+  }
+
+  handleInputChange = event => {
+    const value = event.target.value
+    this.setState ({
+      value: value > 1 ? value : 1 
+    })
+  }
 
   render() { 
     const {name, image, calories} = this.props.food;
+    const {value} = this.state;
+    const {handleInputChange} = this;
     return (
       <div className="box">
         <article className="media">
@@ -28,7 +41,8 @@ class FoodBox extends Component {
                 <input
                   className="input"
                   type="number" 
-                  value="1"
+                  value={value}
+                  onChange={handleInputChange}
                 />
               </div>
               <div className="control">
