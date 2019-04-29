@@ -67,3 +67,8 @@ input, label {
   width: 500px;
   margin-bottom: 15px;
 }
+
+.trash-img {
+  width: 12px;
+  margin-left: 10px;
+}

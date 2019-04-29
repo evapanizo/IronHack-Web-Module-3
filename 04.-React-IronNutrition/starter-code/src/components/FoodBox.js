@@ -15,10 +15,20 @@ class FoodBox extends Component {
     })
   }
 
+  handleAddFoodList = () => {
+    const {value} = this.state;
+    const {food, handleAddToList} = this.props;
+    food.quantity += parseInt(value);
+    handleAddToList(food)
+    this.setState ({
+      value: 1
+    })
+  }
+
   render() { 
     const {name, image, calories} = this.props.food;
     const {value} = this.state;
-    const {handleInputChange} = this;
+    const {handleInputChange, handleAddFoodList} = this;
     return (
       <div className="box">
         <article className="media">
@@ -46,7 +56,7 @@ class FoodBox extends Component {
                 />
               </div>
               <div className="control">
-                <button className="button is-info">
+                <button className="button is-info" onClick={handleAddFoodList}>
                   +
                 </button>
               </div>
